@@ -14,7 +14,7 @@ const postCssLoader = {
 };
 
 module.exports = {
-    entry: "./src/view/index.tsx",
+    entry: "./src/views/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js"]
     },
@@ -34,7 +34,6 @@ module.exports = {
             use: [
                 "style-loader", // creates style nodes from JS strings
                 "css-loader", // translates CSS into CommonJS
-                postCssLoader,
                 "sass-loader" // compiles Sass to CSS
             ]
         }
@@ -48,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: "./src/views/index.html"
         })
     ]
 };
