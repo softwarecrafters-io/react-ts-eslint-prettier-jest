@@ -1,17 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const autoprefixer = require("autoprefixer");
-
-const postCssLoader = {
-    loader: "postcss-loader",
-    options: {
-        sourceMap: false,
-        plugins: [autoprefixer({
-            remove: false,
-            overrideBrowserslist: ["> 1%", "ie 10", "ie 11"]
-        })]
-    }
-};
 
 module.exports = {
     entry: "./src/views/index.tsx",
@@ -34,6 +22,7 @@ module.exports = {
             use: [
                 "style-loader", // creates style nodes from JS strings
                 "css-loader", // translates CSS into CommonJS
+                'postcss-loader',
                 "sass-loader" // compiles Sass to CSS
             ]
         }
